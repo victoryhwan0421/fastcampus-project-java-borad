@@ -10,8 +10,8 @@ logging:
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/board
-    username: aaaa
-    password: aaaa
+    username: aae1
+    password: thisIsTest12!@#
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     defer-datasource-initialization: true
@@ -22,6 +22,9 @@ spring:
       hibernate.format_sql: true
       hibernate.default_batch_fetch_size: 100
   sql.init.mode: always
+  data.rest:
+      base-path: /api
+      detection-strategy: annotated
 ---
 
 
