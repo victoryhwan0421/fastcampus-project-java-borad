@@ -26,7 +26,7 @@ class ArticleControllerTest {
      * API 경로: /articles
      * @throws Exception
      */
-    @Disabled("구현 중")   // 실패하는 테스트는 커밋하지 않는 것을 원칙으로 하기 위한 애노테이션
+   // @Disabled("구현 중")   // 실패하는 테스트는 커밋하지 않는 것을 원칙으로 하기 위한 애노테이션
     @DisplayName("[view] [GET] 게시글 리스트 (게시판) 페이지 - 정상 호출")
     @Test
     public void givenNothing_whenRequestingArticlesView_thenReturningArticlesView() throws Exception {
@@ -36,7 +36,7 @@ class ArticleControllerTest {
         // When_Then
         mvc.perform(get("/articles"))
                 .andExpect(status().isOk())
-                .andExpect(content().contentType(MediaType.TEXT_HTML))
+                .andExpect(content().contentTypeCompatibleWith(MediaType.TEXT_HTML))
                 .andExpect(view().name("articles/index"))
                 .andExpect(model().attributeExists("articles"));
     }
